@@ -25,7 +25,6 @@ class PubBloomFilter:
         for i in range(self.loop):
             num1 = int(pub_slice[i*14:i*14+8], 16)
             num2 = int(pub_slice[i*14+8:i*14+8+6], 16)
-            index = 0
             if num1 > num2:
                 index = num1 - num2
                 self.array[index] = True
@@ -44,7 +43,6 @@ class PubBloomFilter:
         for i in range(self.loop):
             num1 = int(pub_slice[i*14:i*14+8], 16)
             num2 = int(pub_slice[i*14+8:i*14+8+6], 16)
-            index = 0
             if num1 > num2:
                 index = num1 - num2
                 if self.array[index] == False:
